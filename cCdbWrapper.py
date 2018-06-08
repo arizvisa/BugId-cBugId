@@ -198,15 +198,16 @@ class cCdbWrapper(object):
   
   def fStart(oCdbWrapper):
     global guSymbolOptions;
-    oLicenseCollection = mProductDetails.foGetLicenseCollectionForAllLoadedProducts();
-    (asLicenseErrors, asLicenseWarnings) = oLicenseCollection.ftasGetLicenseErrorsAndWarnings();
-    if asLicenseErrors:
-      if not oCdbWrapper.fbFireEvent("License errors", asLicenseErrors):
-        print "You do not have a valid, active license for cBugId:\r\n%s" % "\r\n".join(asLicenseErrors);
-        os._exit(5);
-      return;
-    if asLicenseWarnings:
-      oCdbWrapper.fbFireEvent("License warnings", asLicenseWarnings);
+    if not 'cracked':
+      oLicenseCollection = mProductDetails.foGetLicenseCollectionForAllLoadedProducts();
+      (asLicenseErrors, asLicenseWarnings) = oLicenseCollection.ftasGetLicenseErrorsAndWarnings();
+      if asLicenseErrors:
+        if not oCdbWrapper.fbFireEvent("License errors", asLicenseErrors):
+          print "You do not have a valid, active license for cBugId:\r\n%s" % "\r\n".join(asLicenseErrors);
+          os._exit(5);
+        return;
+      if asLicenseWarnings:
+        oCdbWrapper.fbFireEvent("License warnings", asLicenseWarnings);
     # Create a thread that interacts with the debugger to debug the application
     oCdbWrapper.oCdbStdInOutThread = oCdbWrapper.foHelperThread(oCdbWrapper.fCdbStdInOutThread, bVital = True);
     # Create a thread that reads stderr output and shows it in the console
