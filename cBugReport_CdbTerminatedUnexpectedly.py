@@ -3,6 +3,7 @@ from ftsReportLicenseHeaderAndFooterHTML import ftsReportLicenseHeaderAndFooterH
 import mProductDetails;
 from .sBlockHTMLTemplate import sBlockHTMLTemplate;
 from .sReportHTMLTemplate import sReportHTMLTemplate;
+from .cWindowsStatusOrError import cWindowsStatusOrError;
 
 import cBugId;
 
