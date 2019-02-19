@@ -1,9 +1,9 @@
 [submodule "modules/mWindowsAPI"]
 	path = modules/mWindowsAPI
-	url = git@github.com:arizvisa/BugId-mWindowsAPI.git
+	url = git://github.com/arizvisa/BugId-mWindowsAPI.git
 [submodule "modules/mFileSystem"]
 	path = modules/mFileSystem
-	url = git@github.com:arizvisa/BugId-mFileSystem.git
+	url = git://github.com/arizvisa/BugId-mFileSystem.git
 [submodule "modules/mProductDetails"]
 	path = modules/mProductDetails
-	url = git@github.com:arizvisa/BugId-mProductDetails.git
+	url = git://github.com/arizvisa/BugId-mProductDetails.git
